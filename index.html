@@ -4,20 +4,24 @@
 	<meta charset="utf-8"\>
 	<title>CAB</title>
   	<script src="script.js"></script>
+  	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<h1>
-    	"Calculadora Ácido Base" 
-    </h1>
-    <form>
-        Sódio [Na+]:<br><input id="na"  type="text" value="140"><br>
-        Cloreto [CL-]:<br><input id="cl"  type="text" value="104"><br>
-        Gás Carbônico [PCO2]:<br><input id="pco" type="text" value="40"><br>
-        Albumina [Alb-]:<br><input id="alb" type="text" value="12"><br>
-        Bicarbonato [HCO3]:<br><input id="hco" type="text" value="24"><br>
-    </form>
-    <button id="b_calc">Calcular</button>
-    <div id="out_numbers"></div>
-    <div id="out_diagnoses"></div>
+    <div class="testbox">
+    	<h1>
+        	"CAB" 
+        </h1>
+        <form>
+            <label id="icon" for="name">pH</label><input id="ph"  type="text" value="7.4"><br>
+            <label id="icon" for="name">Na<SUP>+</SUP></label><input id="na"  type="text" value="140">mEq/L<br>
+            <label id="icon" for="name">Cl<SUP>-</SUP></label><input id="cl"  type="text" value="104">mEq/L<br>
+            <label id="icon" for="name">PCO<sub>2</sub></label><input id="pco" type="text" value="40">mEq/L<br>
+            <label id="icon" for="name">Alb<SUP>-</SUP></label><input id="alb" type="text" value="12">g/dL<br>
+            <label id="icon" for="name">HCO<sub>3</sub></label><input id="hco" type="text" value="24">mEq/L<br>
+        </form>
+        <a href="#" id="b_calc" class="button">Calcular</a>
+    </div>
+    <div id="out_numbers" class="resultbox"></div>
+    <div id="out_diagnoses" class="resultbox"></div>
 </body>
 </html>
