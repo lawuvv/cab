@@ -3,6 +3,8 @@ function limpar() {
     document.getElementById('paco2').value = "";
     document.getElementById('hco3').value = "";
     document.getElementById('area-texto').innerHTML = "";
+    document.getElementById('rAguda').checked = false;
+    document.getElementById('rCronica').checked = false;
 }
 
 function diagnostico() {
