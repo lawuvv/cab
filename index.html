@@ -1,27 +1,98 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8"\>
-	<title>CAB</title>
-  	<script src="script.js"></script>
-  	<link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-    <div class="testbox">
-    	<h1>
-        	"CAB" 
-        </h1>
-        <form>
-            <label id="icon" for="name">pH</label><input id="ph"  type="text" value="7.4"><br>
-            <label id="icon" for="name">Na<SUP>+</SUP></label><input id="na"  type="text" value="140">mEq/L<br>
-            <label id="icon" for="name">Cl<SUP>-</SUP></label><input id="cl"  type="text" value="104">mEq/L<br>
-            <label id="icon" for="name">PCO<sub>2</sub></label><input id="pco" type="text" value="40">mEq/L<br>
-            <label id="icon" for="name">Alb<SUP>-</SUP></label><input id="alb" type="text" value="12">g/dL<br>
-            <label id="icon" for="name">HCO<sub>3</sub></label><input id="hco" type="text" value="24">mEq/L<br>
-        </form>
-        <a href="#" id="b_calc" class="button">Calcular</a>
-    </div>
-    <div id="out_numbers" class="resultbox"></div>
-    <div id="out_diagnoses" class="resultbox"></div>
-</body>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>SADM Interpretação de Dados Gasométricos</title>
+
+        <style media="screen">
+            #main {
+                text-align: center;
+            }
+
+            #area-texto {
+                border: 1px solid gray;
+                font-size: 20px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="row">
+
+            <div class="col-sm-offset-1 col-sm-2 col-sm-push-8">
+                <hr>
+                <div class="form-group">
+                  <label for="select">Exemplos:</label>
+                  <select class="form-control" id="ExPac" onchange="preencheForm(this.value)">
+                      <option disabled selected value></option>
+                      <option value="0">Paciente1</option>
+                      <option value="1">Paciente2</option>
+                      <option value="2">Paciente3</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-sm-offset-3 col-sm-5 col-sm-pull-3" id="main">
+                <hr>
+                <form class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="control-label col-xs-offset-2 col-xs-3">pH:</label>
+                        <div class="col-xs-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="ph" id="ph" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-xs-offset-2 col-xs-3">PaCO<sub>2</sub> (mm):</label>
+                        <div class="col-xs-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="paco2" id="paco2" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-xs-offset-2 col-xs-3">HCO<sub>3</sub> (mEq/L):</label>
+                        <div class="col-xs-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="hco3" id="hco3" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-xs-5">Quadro Clínico:</label>
+                        <label class="radio-inline col-xs-2">
+                            <input type="radio" name="optradio" id="rAguda">Aguda</label>
+                        <label class="radio-inline col-xs-2">
+                            <input type="radio" name="optradio" id="rCronica">Crônica</label>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="btn btn-primary " onclick="diagnostico()">Diagnóstico</div>
+                        <div class="col-xs-offset-2 btn btn-danger" onclick="limpar()">Limpar</div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div id="area-texto">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="js/script.js"></script>
+
+    </body>
 </html>
