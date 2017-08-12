@@ -28,7 +28,7 @@ function diagnostico() {
     else if (document.getElementById('ph').value.includes(",") || document.getElementById('paco2').value.includes(",") || document.getElementById('hco3').value.includes(",")) {
         alert("Utilize \".\" para números decimais.");
     }
-    else if(Math.abs(ph - phHandHass) > 0.05) {
+    else if(Math.abs(ph - phHandHass) > 0.1) {
         areaTexto.innerHTML = "Gasometria duvidosa. (Verificar calibragem dos aparelhos e os dados coletados do paciente)";
     }
     else{ //Gasometria válida
